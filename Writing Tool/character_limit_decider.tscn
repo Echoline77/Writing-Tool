@@ -1,0 +1,57 @@
+[gd_scene load_steps=2 format=3 uid="uid://cecoesurjgbxi"]
+
+[ext_resource type="Script" path="res://character_limit_decider.gd" id="1_0u4ls"]
+
+[node name="CharacterLimitDecider" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0u4ls")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 388.0
+offset_top = 246.0
+offset_right = 733.0
+offset_bottom = 281.0
+theme_override_font_sizes/font_size = 25
+text = "What is your character goal?"
+
+[node name="SpinBox" type="SpinBox" parent="."]
+layout_mode = 0
+offset_left = 373.0
+offset_top = 309.0
+offset_right = 746.0
+offset_bottom = 340.0
+max_value = 100000.0
+value = 6500.0
+suffix = "Characters"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.063
+anchor_top = 0.068
+anchor_right = 0.063
+anchor_bottom = 0.068
+offset_left = 361.424
+offset_top = 346.936
+offset_right = 612.424
+offset_bottom = 377.936
+text = "LET'S GOOOO"
+
+[node name="LinkButton" type="LinkButton" parent="."]
+layout_mode = 0
+offset_left = 898.0
+offset_top = 591.0
+offset_right = 1122.0
+offset_bottom = 631.0
+theme_override_font_sizes/font_size = 25
+text = "Music is from here"
+uri = "https://www.youtube.com/watch?v=tlUcmD0zPI4"
+
+[connection signal="value_changed" from="SpinBox" to="." method="_on_spin_box_value_changed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
